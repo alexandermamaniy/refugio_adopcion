@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+<!-- Este template tiene como objetivo el de listar las solicitudes de adopcion, y ademas nos muestra por pagiginas
+la la lista de solicitudes,
+-->
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>No. solicitud</td>
+            <td>Adoptante</td>
+            <td>No. Mascotas</td>
+            <td>Razones</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if object_list %}
+        {% for solicitud in object_list %}
+        <tr>
+            <td>{{ solicitud.id }}</td>
+            <td>{{ solicitud.usuario.user.first_name }} {{ solicitud.usuario.usuario.user.last_name }} </td>
+            <td>{{ solicitud.numero_mascotas }}</td>
+            <td>{{ solicitud.razones }}</td>
+
+            <td>
+                <a href="{% url 'adopcion:solicitud_update' solicitud.id %}" class="btn btn-primary">Editar</a>
+                <a href="{% url 'adopcion:solicitud_delete' solicitud.id %}" class="btn btn-danger">Eliminar</a>
+            </td>
+
+        </tr>
+
+
+        {% endfor %}
+        {% else %}
+        <h1>No hay registros</h1>
+        {% endif %}
+
+    </tbody>
+</table>
+
+<ul class="pager">
+    <li>
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previuos_page_number }}">Previous</a>
+        {% endif %}
+    </li>
+    <li>
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </li>
+
+</ul>
+
+{% endblock %}

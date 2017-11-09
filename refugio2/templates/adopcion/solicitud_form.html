@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+<!-- Este template tiene como objetivo el de crear una solicitud de adopcion
+
+-->
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="{{ form.usuario.name }}">{{form.usuario.label}}</label>
+                {{ form.usuario }}
+            </div>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="{{ form.numero_mascotas.name }}">{{form.numero_mascotas.label}}</label>
+                {{ form.numero_mascotas }}
+            </div>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="{{ form.razones.name }}">{{form.razones.label}}</label>
+                {{ form.razones }}
+            </div>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit">
+            </div>
+        </div>
+
+    </div>
+
+
+</form>
+{% endblock %}

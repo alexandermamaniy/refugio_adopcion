@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+<!-- Este template tiene como objetivo el de eliminar una solicitud de adopcion
+
+-->
+{% block content %}
+<h3> Desea eliminar la solicitud del usuario : {{ object.usuario.user.first_name }} </h3>
+<form method="post">
+    {% csrf_token %}
+
+    <input class="btn btn-danger" type="submit" value="Eliminar">
+    <a class="btn btn-success" href="{% url 'adopcion:solicitud_list' %}">Cancelar</a>
+</form>
+{% endblock %}

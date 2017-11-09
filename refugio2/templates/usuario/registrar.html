@@ -1,0 +1,105 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<!-- Este template tiene como objetivo el de llenar el formulario  deregistro de nuevos usuarios
+hacia nuestros sistema de informacion-->
+<form method="post">
+    {% csrf_token %}
+
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form2.first_name.name }}">{{ form2.first_name.label }}</label>
+                {{ form2.first_name }}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form2.last_name.name }}">{{ form2.last_name.label }}</label>
+                {{ form2.last_name }}
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <label for="{{ form.edad.name }}">{{ form.edad.label }}</label>
+            {{ form.edad }}
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form.telefono.name }}">{{ form.telefono.label }}</label>
+                {{ form.telefono }}
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form.domicilio.name }}">{{ form.domicilio.label }}</label><br>
+                {{ form.domicilio }}
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form2.username.name }}">{{ form2.username.label }}</label>
+                {{ form2.username }}
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form2.email.name }}">{{ form2.email.label }}</label>
+                {{ form2.email }}
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form2.password1.name }}">{{ form2.password1.label }}</label>
+                {{ form2.password1 }}
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{ form2.password2.name }}">{{ form2.password2.label }}</label>
+                {{ form2.password2 }}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <button type="submit"> Guardar </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</form>
+
+{% endblock %}
