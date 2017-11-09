@@ -70,8 +70,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'refugio2',
-        'USER':'nom_DB',
-        'PASSWORD':'password_DB',
+        'USER': 'alex',
+        'PASSWORD': 'alekey60254584',
         'HOST':'localhost',
         'PORT':5432,
     }
@@ -122,7 +122,7 @@ LOGOUT_REDIRECT_URL = reverse_lazy('login')
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_POST = 25
+EMAIL_HOST_USER = 'akeymy4@gmail.com'
+EMAIL_HOST_PASSWORD = 'alekey60254584'
 
-EMAIL_HOST_USER = 'correo@gmail.com'
-EMAIL_HOST_PASSWORD = 'password_correo'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
